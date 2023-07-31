@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kafka.simple.kafka.KafkaProducer;
+import com.kafka.simple.payload.User;
 
 @RestController
 public class MessageController {
@@ -21,7 +22,6 @@ public class MessageController {
 	@GetMapping("/publish")
 	public ResponseEntity<String> publish(@RequestParam("message") String message) {
 		kafkaProducer.sendMessage(message);
-		return new ResponseEntity<>("Message sent to the topic",HttpStatus.OK);
+		return new ResponseEntity<>("Message sent to the Kafka topic",HttpStatus.OK);
 	}
-
 }

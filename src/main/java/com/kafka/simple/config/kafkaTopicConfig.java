@@ -14,4 +14,9 @@ public class kafkaTopicConfig {
 	public NewTopic kafkaTopic() {
 		return TopicBuilder.name("kafkatopic").build();
 	}
+	
+	@Bean
+	public NewTopic JsonkafkaTopic() {
+		return TopicBuilder.name("jsonkafkatopic").build();
+	}
 }
